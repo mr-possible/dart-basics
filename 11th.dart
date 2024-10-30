@@ -1,46 +1,28 @@
-//Constructor
+//Getters and Setters
 
 class Maths {
-  int n1 = 0, n2 = 0;
+  int _n1 = 0, _n2 = 0; //_ means private
 
-  Maths.namedConstructor() {
-    print("Name Constructor invoked!");    
+  void set number1(int val) {
+    _n1 = val;
   }
 
-  Maths(final int n1, final int n2) {
-    print("Parameterized Constructor invoked!");
-    this.n1 = n1;
-    this.n2 = n2;
+  void set number2(int val) {
+    _n2 = val;
   }
 
-  int addition() {
-    return this.n1 + this.n2;
+  int get number1 {
+    return _n1;
   }
 
-  int subtraction() {
-    return this.n1 - this.n2;
-  }
-
-  int multiplication() {
-    return this.n1 * this.n2;
-  }
-
-  double division() {
-    return this.n1 / this.n2;
-  }
+  int get number2 => _n2; //shorthand syntax
 }
 
 void main() {
-  Maths maths = new Maths(10,20);
-  Maths maths2 = new Maths.namedConstructor();
+  Maths maths = new Maths();
+  maths.number1 = 4;
+  maths.number2 = 5;
 
-  print(maths.addition());
-  print(maths.subtraction());
-  print(maths.multiplication());
-  print(maths.division());
-  
-  print(maths2.addition());
-  print(maths2.subtraction());
-  print(maths2.multiplication());
-  print(maths2.division());
+  print(maths.number1);
+  print(maths.number2);
 }
