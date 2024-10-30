@@ -1,10 +1,11 @@
-//Positional Parameters
+//Name Parameters
 
 void main() {
-  Map userData = userMap("Sambhav", 27, "Male", 03); //Basically pass the required values in the same sequence as in the function definition  
+  Map userData1 = userMap(name: "Sambhav", age: 27, gender: "Male", batch: 3); //correct
+  //Map userData2 = userMap(age: 27, gender: "Male", batch: 3); //correct
 }
 
-Map userMap(final String name, final int age, final String gender, final int batch) {
+Map userMap({required final String name, final int? age, final String? gender, final int? batch}) { // ? represents nullable  - i am allowed to have null values there.
   return {
     "name": name,
     "age": age,
